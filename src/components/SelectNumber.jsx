@@ -2,15 +2,16 @@ const numbers = [3, 4, 5, 6, 7, 8];
 
 function SelectNumber({ howManyWorkers, setHowManyWorkers }) {
   return (
-    <div className="selectDeparture">
+    <div>
+      <label htmlFor="howMany">WIE VIELE MITARBEITER:</label>
       <select
         id="opts"
-        value={howManyWorkers}
-        onChange={(e) => setHowManyWorkers(e.target.value)}
+        value={parseInt(howManyWorkers)}
+        onChange={(e) => setHowManyWorkers(parseInt(e.target.value))}
       >
         {numbers.map((number, index) => (
           <option key={index} value={number}>
-            {number}
+            {parseInt(number)}
           </option>
         ))}
       </select>
